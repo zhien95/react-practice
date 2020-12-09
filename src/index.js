@@ -2,10 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Greeting(){
-  return <h1>Hello World!</h1>
+import Book from './Book';
+
+function BookList(){
+  return (
+      <div className='booklist'>
+        <Book/>
+        <Book/>
+        <Book/>
+        <Book/>
+        <Book/>
+      </div>
+    )
 }
 
-ReactDOM.render( <Greeting/>,
+
+ReactDOM.render( <BookList/>,
   document.getElementById('root')
 );
