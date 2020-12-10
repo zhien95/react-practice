@@ -13,7 +13,7 @@ export class ChartHolder extends Component {
         loader={<div>Loading Chart</div>}
         data={[
           ['day', 'a', 'b', 'c', 'd'],
-          ['Mon', 20, 28, 38, 45],
+          ['Mon', 20, 28, 38, 40],
           ['Tue', 31, 38, 55, 66],
           ['Wed', 50, 55, 77, 80],
           ['Thu', 77, 77, 66, 50],
