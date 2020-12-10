@@ -13,15 +13,21 @@ export class Album extends Component {
     componentDidMount(){
         fetch("https://jsonplaceholder.typicode.com/photos")
         .then(res => res.json())
-        .then(data =>this.setState({
+        .then(data =>{
+            data.length = 15
+            this.setState({
             albums : data
-        }))
+        })
+    })
+
         .catch(err => console.log(err))
         console.log(this.state.albums)
     }
 
     render() {
         return (
+            <>
+            <center><h1>Top Selling Album Section</h1></center>
             <div className = 'albumlist'>
                 {
                     this.state.albums.map((data)=>{
@@ -34,6 +40,7 @@ export class Album extends Component {
                       })
                 }
             </div>
+        </>
         )
     }
 }

@@ -59,3 +59,26 @@ code {
     grid-template-columns: repeat(5, 1fr);
   }
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #add8e6;
+  border-radius: 1rem;
+}
+
+li .a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-align: left;
+}
+
+/* Change the link color on hover */
+li .a:hover {
+  background-color: #555;
+  color: white;
+}

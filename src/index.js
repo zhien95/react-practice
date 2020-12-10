@@ -1,28 +1,48 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom'
+
 import './index.css';
 
-import data from './data'
-import Book from './Book';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import BookList from './BookList';
+import About from './About';
 import Album from './Album';
 
+import Navbar from './Navbar';
+import Error from './Error';
+import ChartHolder from './ChartHolder';
 
-function BookList(){
-  return (
-    <div>
-    <center><h1>Top Selling Book Section</h1></center>
-      <div className='booklist' id = '1'>
-        {data.map((data)=>{
-            return Book(data)
-          })}
-      </div>
-      <center><h1>Top Selling Album Section</h1></center>
-      <Album id = '2'/>
-      </div>
-    )
+
+const ReactRouterSetup = () =>{
+  return(
+  <Router>
+  <Navbar />
+  <Switch>
+    <Route exact path='/'>
+      <BookList/>
+    </Route>
+    <Route path='/about'>
+      <About/>
+    </Route>
+    <Route path = '/Album'>
+      <Album/>
+    </Route>
+    <Route path = '/Charts'>
+      <ChartHolder/>
+    </Route>
+    <Route path='*'>
+      <Error />
+    </Route>
+  </Switch>
+</Router>
+  )
 }
 
+export default ReactRouterSetup;
 
-ReactDOM.render( <BookList/>,
+ReactDOM.render(
+  <React.StrictMode>
+    <ReactRouterSetup/>
+  </React.StrictMode>,
   document.getElementById('root')
 );
