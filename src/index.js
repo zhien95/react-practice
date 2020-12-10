@@ -18,10 +18,7 @@ const ReactRouterSetup = () =>{
   <Router>
   <Navbar />
   <Switch>
-    <Route exact path='/react-practice/'>
-      <BookList/>
-    </Route>
-    <Route path='/'>
+    <Route exact path='/'>
       <BookList/>
     </Route>
     <Route path='/about'>
